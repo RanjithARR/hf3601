@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HF360 - Nutrition and Wellness</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('veg.jpg'); /* Ensure the correct path here */
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 128, 0, 0.7);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Scrolling text style */
+        .scrolling-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: yellow;
+            white-space: nowrap;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .scrolling-text span {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll 25s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translate(100%, 0);
+            }
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+
+        /* Registration form styles */
+        .registration-section {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        Welcome to HF360 - Nutrition & Wellness
+    </header>
+
+    <!-- Scrolling text (e.g., nutrition benefits) -->
+    <div class="scrolling-text">
+        <span>Discover the benefits of proper nutrition: Boost immunity, increase energy, and live healthier!</span>
+    </div>
+
+    <!-- Package Selection Section -->
+    <div class="package-section">
+        <h2 class="h2color"> Choose Your Nutrition Package</h2>
+        <form>
+            <label for="package">Select Package:</label>
+            <select id="package" name="package">
+                <option value="package1">Package 1</option>
+                <option value="package2">Package 2</option>
+                <option value="package3">Package 3</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- User Registration Form -->
+    <div class="registration-section">
+        <h2>Register for a Free Account</h2>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+
+
+    <!-- Script for form submission -->
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault();  // Prevents form from submitting the traditional way
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const country = document.getElementById('country').value;
+
+            // Create data object
+            const formData = {
+                name: name,
+                email: email,
+                country: country
+            };
+
+            // Send the data to the backend via POST request
+            fetch('http://127.0.0.1:3000/register', {  // Replace with your backend URL
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert('Registration successful: ' + data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error with your registration.');
+            });
+        });
+    </script>
+
+</body>
+</html>

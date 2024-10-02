@@ -1,0 +1,85 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('veg.jpg') no-repeat center center fixed;
+    /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('nutrition-bg.jpg') no-repeat center center fixed;*/
+    background-size: cover;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #ffda79;
+}
+h2.h2color {
+    font-size: 10.5rem;
+    color: red !important;
+    /*background-color: rgba(219, 30, 30, 0.7);*/
+}
+.main {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.package-section, .registration-section {
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    font-size: 1.5rem;
+    color: #ffda79;
+}
+
+.package-section select, .registration-section input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.registration-section button {
+    padding: 10px 20px;
+    background-color: #ffda79;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registration-section button:hover {
+    background-color: #ffab00;
+}
+
+.background-section {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+.nutrition-foods {
+    list-style: none;
+    padding: 0;
+}
+
+.nutrition-foods li {
+    display: inline-block;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #333;
+}
