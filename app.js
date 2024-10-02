@@ -14,7 +14,7 @@ app.use(cors());
 //Cross origin support to access localhost from internet
 //const cors = require('cors');
 app.use(cors({
-    origin: 'https://ranjitharr.github.io/hf3601/',  // Replace with your GitHub Pages URL
+    origin: 'https://ranjitharr.github.io',  // Replace with your GitHub Pages URL
     methods: ['POST', 'GET'],
     allowedHeaders: ['Content-Type']
 }));
